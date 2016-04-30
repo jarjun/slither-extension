@@ -15,6 +15,7 @@ code = function(){
             hash = ((hash<<5)-hash)+character;
             hash = hash & hash; // Convert to 32bit integer
         }
+        console.log(hash);
         return hash;
     }
     function getWords(callback){
@@ -30,9 +31,9 @@ code = function(){
     }
 
     function pickName(ip, port){
-        var first = ip.hashCode() % adjectives.length;
+        var first = Math.abs(ip.hashCode()) % adjectives.length;
         var second = ip + ":" + port;
-        second = second.hashCode() % animals.length;
+        second = Math.abs(second.hashCode()) % animals.length;
         return adjectives[first] + " " + animals[second];
     }
 
