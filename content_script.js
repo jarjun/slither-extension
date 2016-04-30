@@ -18,10 +18,10 @@ code = function(){
         return hash;
     }
     function getWords(callback){
-        $.get("http://test.gfycat.com/adjectives", function(adj) {
+        $.get("http://jarjun.github.io/slither-extension/adjectives", function(adj) {
             console.log(adj);
             adjectives = adj.split('\n');
-            $.get("http://test.gfycat.com/animals", function(anm) {
+            $.get("http://jarjun.github.io/slither-extension/animals", function(anm) {
                 animals = anm.split('\n');
                 console.log(adjectives);
                 callback()
